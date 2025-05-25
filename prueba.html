@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio optimizado</title>
+</head>
+<body>
+
+  <audio id="audioPlayer" src="audio/background%20audio.mp3" controls autoplay loop muted></audio>
+
+  <button id="unmuteButton">🔊 Activar sonido y reproducir</button>
+
+  <script>
+    const audio = document.getElementById("audioPlayer");
+    const button = document.getElementById("unmuteButton");
+
+    button.addEventListener("click", () => {
+      audio.play().then(() => {
+        audio.muted = false;
+      }).catch((err) => {
+        console.error("No se pudo reproducir el audio:", err);
+      });
+    });
+  </script>
+
+</body>
+</html>
